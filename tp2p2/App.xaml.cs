@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using tp2p2.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -45,7 +46,14 @@ namespace tp2p2
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             m_window = new MainWindow();
+            // Create a frame to act as the navigation context and navigate to the first page
+            Frame rootFrame = new Frame();
+            // Place the frame in the current window
+            this.m_window.Content = rootFrame;
+            //Ensure the current window is active
             m_window.Activate();
+            //Navigate to the first page
+            rootFrame.Navigate(typeof(SeriePage));
         }
 
         private Window m_window;
