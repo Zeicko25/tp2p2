@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using tp2p2.Services;
 using tp2p2.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -37,6 +38,11 @@ namespace tp2p2
         public App()
         {
             this.InitializeComponent();
+        }
+
+        public ISerie ObjWSSerie
+        {
+            get { return new WSSerie("https://tp2part1.azurewebsites.net"); }
         }
 
         /// <summary>

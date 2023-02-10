@@ -15,7 +15,7 @@
         <TextBlock
             Margin="12,20"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
-            Text="Titre" />
+            Text="{Binding serieToAdd.Titre, Mode=TwoWay}" />
         <TextBox
             Width="400"
             Margin="12,45"
